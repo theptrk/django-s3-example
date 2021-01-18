@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=learn_s3
+POSTGRES_USER=xXseUiquSHiKampOfymVCpEtOABtOEbw
+POSTGRES_PASSWORD=OZfmKc7auqwOfO8NGNwNSoZPjWFwtr0PPZCSkTXMH0owrAicP6en84HZuP5uJlzc
