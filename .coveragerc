@@ -1,0 +1,6 @@
+[run]
+include = <your_project_name>/*
+omit = *migrations*, *tests*
+disable_warnings = already-imported
+plugins =
+    django_coverage_plugin

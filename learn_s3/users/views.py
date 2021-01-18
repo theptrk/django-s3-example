@@ -8,6 +8,26 @@ from django.views.generic import DetailView, RedirectView, UpdateView
 User = get_user_model()
 
 
+class UserProfilePicture(LoginRequiredMixin, UpdateView):
+    fields = ["profile_picture"]
+    template_name = "users/user_profile_picture_form.html"
+
+    def get_success_url(self):
+        return reverse("users:detail", kwargs={"username": self.request.user.username})
+
+    def get_object(self):
+        return User.objects.get(username=self.request.user.username)
+
+    def form_valid(self, form):
+        messages.add_message(
+            self.request, messages.INFO, _("Infos successfully updated")
+        )
+        return super().form_valid(form)
+
+
+user_profile_picture_view = UserProfilePicture.as_view()
+
+
 class UserDetailView(LoginRequiredMixin, DetailView):
 
     model = User
